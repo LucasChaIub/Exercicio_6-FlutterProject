@@ -62,7 +62,15 @@ class _CreateClientState extends State<CreateClient> {
       backgroundColor: Colors.green,
     ));
 
+    resetFields();
     FocusScope.of(context).unfocus();
+  }
+
+  void resetFields() {
+    controllerNome.text = '';
+    controllerEmail.text = '';
+    controllerCPF.text = '';
+    controllerTelefone.text = '';
   }
 
   @override
@@ -154,7 +162,6 @@ class _CreateClientState extends State<CreateClient> {
                           if (formKey.currentState!.validate()) {
                             createClient();
                           }
-                          formKey.currentState!.reset();
                         },
                         child: Text(
                           'Finalizar Cadastro',
